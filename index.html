@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jewelry Pre-Launch</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Logo Section -->
+    <div class="logo-section">
+      <img src="/Users/eliatorre/Desktop/onux.com/assets/logo.png" alt="Logo">
+    </div>
+
+    <!-- Top Black Section -->
+    <div class="black-section"></div>
+
+    <div class="image-section">
+      <img src="/Users/eliatorre/Desktop/onux.com/assets/2.jpg" alt="Jewelry Image">
+      <div class="content">
+        <!-- Description Section -->
+        <div class="description-container">
+          <p class="description">Timeless elegance</p>
+        </div>
+
+        <!-- Custom Email Form -->
+        <div class="email-form-container">
+          <form class="email-form" id="customEmailForm">
+            <input type="email" id="emailInput" name="email" placeholder="Enter your email" required>
+            <button type="submit">Notify Me</button>
+          </form>
+          <p id="responseMessage" class="response-message"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Black Section -->
+    <div class="black-section"></div>
+  </div>
+
+  <script>
+    document.getElementById('customEmailForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const emailInput = document.getElementById('emailInput');
+      const responseMessage = document.getElementById('responseMessage');
+      const email = emailInput.value;
+
+      // Send email to Google Form endpoint
+      const googleFormUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSfiSJ_fUt7bcXSg4ERYxXBy9gO1VXE9gM7Zw2RmNP_GZcF1RQ/formResponse';
+      const formData = new FormData();
+      formData.append('entry.176822145', email); // Replace with your actual field's entry ID
+
+      fetch(googleFormUrl, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: formData
+      })
+        .then(() => {
+          responseMessage.textContent = 'Thank you for subscribing!';
+          responseMessage.style.color = 'white';
+          emailInput.value = ''; // Clear the input field
+        })
+        .catch((error) => {
+          responseMessage.textContent = 'Something went wrong. Please try again.';
+          responseMessage.style.color = 'red';
+          console.error('Error:', error);
+        });
+    });
+  </script>
+</body>
+</html>

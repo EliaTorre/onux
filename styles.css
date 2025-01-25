@@ -1,0 +1,134 @@
+/* Reset and Box Sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body and HTML Styling */
+body, html {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: black;
+  color: white;
+}
+
+/* Container */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Logo Section */
+.logo-section {
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.logo-section img {
+  max-width: 150px; /* Adjust the size of the logo */
+  height: auto;
+}
+
+/* Black Sections */
+.black-section {
+  height: 25%;
+  width: 100%;
+  background-color: black;
+}
+
+/* Image Section */
+.image-section {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: -100px; /* Adjust placement of the image section */
+}
+
+.image-section img {
+  width: 100%; /* Make the image responsive */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Content */
+.content {
+  position: absolute;
+  text-align: center;
+  background: none; /* Transparent background */
+  padding: 15px; /* Adjust padding */
+  max-width: 400px; /* Restrict the width of the box */
+  width: 90%; /* Make it responsive for smaller screens */
+}
+
+/* Description Text */
+.description {
+  font-family: 'Georgia', serif; /* Change the font to Georgia or any desired font */
+  font-size: 1.5rem; /* Adjust the font size */
+  margin-bottom: 20px; /* Maintain spacing below text */
+}
+
+/* Description Container */
+.description-container {
+  margin-bottom: 50px; /* Add spacing below the description */
+}
+
+/* Email Form Container */
+.email-form-container {
+  margin-top: 150px; /* Add spacing above the email form */
+}
+
+/* Email Form */
+.email-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the form horizontally */
+  gap: 10px; /* Add spacing between input and button */
+}
+
+.email-form input[type="email"] {
+  padding: 10px;
+  font-size: 1rem;
+  background-color: black; /* Black background */
+  color: rgba(255, 255, 255, 0.8); /* White text with 80% transparency */
+  border: 2px solid white; /* White contour */
+  border-radius: 50px; /* Rounded corners */
+  text-align: center; /* Center the text inside the input */
+  width: 250px; /* Adjust the width if needed */
+}
+
+.email-form input[type="email"]::placeholder {
+  color: rgba(255, 255, 255, 0.5); /* Transparent placeholder text */
+}
+
+.email-form button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: black; /* Black background */
+  color: rgba(255, 255, 255, 0.8); /* White text with 80% transparency */
+  border: 2px solid white; /* White contour */
+  border-radius: 50px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor for better UX */
+  text-align: center; /* Center the text */
+}
+
+.email-form button:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent white background on hover */
+  color: white; /* Fully white text on hover */
+  border-color: rgba(255, 255, 255, 1); /* Keep the border fully opaque */
+}
+
+/* Response Message */
+.response-message {
+  margin-top: 10px;
+  font-size: 1rem;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
